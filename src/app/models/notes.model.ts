@@ -9,7 +9,12 @@ const noteSchema = new Schema<INotes>({
         tags: { 
             label: { type: String, required: true },
             color: { type: String, default: "Gray" }
-    }
+        },
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true
+        }
     }, {
         versionKey: false,
         timestamps: true
